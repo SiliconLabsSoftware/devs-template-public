@@ -1,8 +1,8 @@
 # Developer Services template project
-** TODO **Put project introduction here. 1-2 sentence about the project.
+** TODO ** Put project introduction here. 1-2 sentence about the project.
 ## How to use the template
 1. Import the [basic ruleset](https://github.com/SiliconLabsSoftware/devs-template/blob/main/.github/rulesets/Silabs-basic-public-ruleset.json). Follow the official GitHub [guide](https://docs.github.com/en/enterprise-cloud@latest/organizations/managing-organization-settings/managing-rulesets-for-repositories-in-your-organization#importing-a-ruleset).
-2. Update if necessary the [issue_templates](.github/ISSUE_TEMPLATE/) and the [pull request template](./PULL_REQUEST_TEMPLATE.mdL)
+2. Update if necessary the [issue_templates](.github/ISSUE_TEMPLATE/) and the [pull request template](./PULL_REQUEST_TEMPLATE.md)
 3. Create your sw projects under [projects/](projects/) folder.
 4. Check [.gitignore](.gitignore) file and modify it if it is necessary
 5. Check the [./Dockerfile](./Dockerfile) and extend it if necessary
