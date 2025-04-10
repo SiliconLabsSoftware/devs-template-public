@@ -30,9 +30,3 @@
 *.xlsx
 *.xls
 *.html
-
-
-
-#code convention tool gitignore
-code-convention-tool/
-**/venv/
