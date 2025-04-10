@@ -20,7 +20,7 @@ Read the Silicon Labs [coding guidelines](https://github.com/SiliconLabsSoftware
 ## Git Setup
 We need to know who you are, and how to contact you. Please ass the following information to your Git installation:
 ```
-git config --global user.name "First-Name Last-Name"
+git config --global user.name "FirstName LastName"
 git config --global user.email "firstname.lastname@example.com"
 ```
 set the Git configuration variables user.name to your full name, and user.email to your email address.
@@ -47,11 +47,11 @@ $ git config --global --unset gpg.format
 ```
 2. Create a gpg-key
 ```
-$gpg --full-generate-key
+$ gpg --full-generate-key
 ```
 3. Configure the local repo with your new key.
 ```
-$gpg --list-secret-keys --keyid-format=long
+$ gpg --list-secret-keys --keyid-format=long
 gpg: checking the trustdb
 gpg: marginals needed: 3  completes needed: 1  trust model: pgp
 gpg: depth: 0  valid:   1  signed:   0  trust: 0-, 0q, 0n, 0m, 0f, 1u
