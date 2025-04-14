@@ -63,7 +63,7 @@ To set up the Docker-based build environment, follow these steps:
 **TODO**
 Explain how can a developer debug this software project. Pictures are recommended.
 ## Contributing
-Please follow the [CONTRIBUTING](./.github/CONTRIBUTING) guideline.
+Please follow the [CONTRIBUTING](./.github/CONTRIBUTING.md) guideline.
 
 ## License
 See the [LICENSE.md](./LICENSE.md) file for details.
