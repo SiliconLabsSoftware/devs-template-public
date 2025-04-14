@@ -2,7 +2,7 @@
 ** TODO ** Put project introduction here. 1-2 sentence about the project.
 ## How to use the template
 1. Import the [basic ruleset](https://github.com/SiliconLabsSoftware/devs-template/blob/main/.github/rulesets/Silabs-basic-public-ruleset.json). Follow the official GitHub [guide](https://docs.github.com/en/enterprise-cloud@latest/organizations/managing-organization-settings/managing-rulesets-for-repositories-in-your-organization#importing-a-ruleset).
-2. Update if necessary the [issue_templates](.github/ISSUE_TEMPLATE/) and the [pull request template](./PULL_REQUEST_TEMPLATE.md)
+2. Update if necessary the [issue_templates](.github/ISSUE_TEMPLATE/) and the [pull request template](./.github/PULL_REQUEST_TEMPLATE.md)
 3. Create your sw projects under [projects/](projects/) folder.
 4. Check [.gitignore](.gitignore) file and modify it if it is necessary
 5. Check the [./Dockerfile](./Dockerfile) and extend it if necessary
@@ -47,7 +47,7 @@ Using Docker for the build environment has several advantages:
 To set up the Docker-based build environment, follow these steps:
 1. Install Docker on your machine. Only Linux and MacOS platforms are supported for now.
 2. Clone the repository.
-3. Build the Docker image using the provided [Dockerfile](./.github/Dockerfile).
+3. Build the Docker image using the provided [Dockerfile](./Dockerfile).
 4. Run the Docker container with the necessary configurations.
 
 ### Windows
@@ -63,7 +63,7 @@ To set up the Docker-based build environment, follow these steps:
 **TODO**
 Explain how can a developer debug this software project. Pictures are recommended.
 ## Contributing
-Please follow the [CONTRIBUTING](./.github/CONTRIBUTING.md) guideline.
+Please follow the [CONTRIBUTING](./.github/CONTRIBUTING) guideline.
 
 ## License
 See the [LICENSE.md](./LICENSE.md) file for details.
