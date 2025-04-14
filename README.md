@@ -9,11 +9,9 @@
 6. Make sure that the whole project can be compiled with a single "make all" command.  
    also implement "make clean"
 7. Fill out the [CODEOWNERS](./.github/CODEOWNERS) file. Here is the official github [guide](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners)
-8. Update and extend if needed the [sonar project file](./.github/sonar-project.properties) .
-9. **Internal projects only** Add a self-hosted runner with "devs-self-hosted-runner" name. [guide](https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners/adding-self-hosted-runners)
-10. Secrets, add your sonarqube token and for  **public repositores** add github personal access token.
-11. Check the workflow and adjust them according to the repo types (internal of public)
-12. Update this Readme file and remove this list from it.
+8. Add github personal access token named "PERSONAL_ACCESS_TOKEN" as a repository secret. It is necessary for CLA signature workflow.
+9. Check the available [workflows](./.github/workflows) and adjust them according to the repo types (internal or public)
+10. Update this Readme file and remove this list from it.
 
 ## Table of Contents
 - [Developer Services template project](#developer-services-template-project)
