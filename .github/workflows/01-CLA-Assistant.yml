@@ -1,13 +1,12 @@
 name: 01-CLA-Assistant
-## This workflow is used only for public repositories
-## uncomment the other trigger conditions for public repositories
+## This workflow is used to check the CLA validation for the pull requests.concurrency: 
+## Source: https://github.com/SiliconLabsSoftware/action-cla-assistant/tree/silabs_flavour_v2
 
 on:
-  workflow_dispatch:
-# issue_comment:
-#   types: [created]
-# pull_request_target:
-#   types: [opened,closed,synchronize,reopened]
+  issue_comment:
+    types: [created]
+  pull_request_target:
+    types: [opened,closed,synchronize,reopened]
 
 # explicitly configure permissions, in case your GITHUB_TOKEN workflow permissions are set to read-only in repository settings
 permissions:
@@ -18,11 +17,11 @@ permissions:
 
 jobs:
   CLAAssistant:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     steps:
       - name: "CLA Assistant"
         if: ${{ contains(github.event.comment.body, 'I have read the CLA Document and I hereby sign the CLA') }} || github.event_name == 'pull_request_target'
-        uses: SiliconLabsWorkflows/cla-assistant@silabs_flavour_v2
+        uses: SiliconLabsSoftware/action-cla-assistant@silabs_flavour_v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # the below token should have repo scope and must be manually added by you in the repository's secret
@@ -30,7 +29,7 @@ jobs:
           PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         with:
           path-to-signatures: "cla_signatures_db.json"
-          path-to-document: "https://github.com/SiliconLabsSoftware/bluetooth-AoA-example/blob/main/cla.md"
+          path-to-document: "https://github.com/SiliconLabsSoftware/agreements-and-guidelines/blob/main/contributor_license_agreement.md"
           # branch should not be protected
           branch: 'cla-database'
           allowlist: silabs-*,bot*

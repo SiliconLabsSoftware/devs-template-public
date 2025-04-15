@@ -1,7 +1,5 @@
 name: 02-Build-Firmware
-## By default this workflow runs on Github hosted runners. This is not free for internal and private repositories
-## It is recommended to run this job on a self-hosted runner for non public repository
-## Uncomment the needed runs-on command.
+
 on:
   pull_request:
     branches:
@@ -15,9 +13,7 @@ on:
 
 jobs:
   FW_build:
-    # Choose a runner type here by commenting out the not needed one.
     runs-on: ubuntu-24.04
-    #runs-on: devs-self-hosted-runner
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
