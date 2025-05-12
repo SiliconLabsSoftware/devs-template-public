@@ -105,7 +105,7 @@ Now you have a branch. You can start committing your code onto it.
 
 ## Commit Messages
 
-Silicon Labs repositories require signed-off commits. 
+Silicon Labs repositories require signed-off commits.
 Every commit represents a change inside the repository. Every change needs to be documented extensively.  
 ```
 Issuenumber-summary-of-changes
