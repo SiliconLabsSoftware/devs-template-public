@@ -9,25 +9,9 @@
 6. Make sure that the whole project can be compiled with a single "make all" command.  
    also implement "make clean"
 7. Fill out the [CODEOWNERS](./.github/CODEOWNERS) file. Here is the official github [guide](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners)
-8. Add github personal access token named "PERSONAL_ACCESS_TOKEN" as a repository secret. It is necessary for CLA signature workflow.
+8. Add github app private key for CLA assistant signature. Contact silicon labs github support person for it.
 9. Check the available [workflows](./.github/workflows) and adjust them according to the repo types (internal or public)
 10. Update this Readme file and remove this list from it.
-
-## Table of Contents
-- [Developer Services template project](#developer-services-template-project)
-  - [How to use the template](#how-to-use-the-template)
-  - [Table of Contents](#table-of-contents)
-  - [Hardware requirements](#hardware-requirements)
-  - [Hardware Setup](#hardware-setup)
-  - [Build environment setup](#build-environment-setup)
-    - [Docker](#docker)
-    - [Windows](#windows)
-    - [Linux](#linux)
-    - [MacOS](#macos)
-  - [Debug environment](#debug-environment)
-  - [Contributing](#contributing)
-  - [License](#license)
-  - [Secrets](#secrets)
 
 ## Hardware requirements
 ** TODO ** List the required hw components.
@@ -69,6 +53,4 @@ Please follow the [CONTRIBUTING](./.github/CONTRIBUTING.md) guideline.
 See the [LICENSE.md](./LICENSE.md) file for details.
 
 ## Secrets
-The following secrets are required for this project:
-- `PERSONAL_ACCESS_TOKEN`: Needed for the CLA signature automation workflow **only for public projects**
-- `SONAR_TOKEN`: Token to access Sonarqube servers
+** TODO** List here the necessary secrets. DO NOT USE PERSONAL ACCESS TOKENS IN PUBLIC REPOSITORIES.
