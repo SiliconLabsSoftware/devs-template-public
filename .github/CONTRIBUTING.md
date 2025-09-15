@@ -36,7 +36,7 @@ If you intend to edit commits using the Github.com UI, ensure that your github p
 
 The repository requires signed off commits. Follow this [guide](https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits) how to set it up.
 1. Generate a gpg key [howto](https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key)
-2. Configure your local repository with the gpg key. [guide]whttps://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key)
+2. Configure your local repository with the gpg key. [guide](https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key)
 3. Configure your GitHub account with the gpg key [guide](https://docs.github.com/en/authentication/managing-commit-signature-verification/associating-an-email-with-your-gpg-key)
 
 **Command line steps:**  
