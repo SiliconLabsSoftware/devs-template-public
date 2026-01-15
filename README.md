@@ -51,6 +51,3 @@ Please follow the [CONTRIBUTING](./.github/CONTRIBUTING.md) guideline.
 
 ## License
 See the [LICENSE.md](./LICENSE.md) file for details.
-
-## Secrets
-** TODO** List here the necessary secrets. DO NOT USE PERSONAL ACCESS TOKENS IN PUBLIC REPOSITORIES.
