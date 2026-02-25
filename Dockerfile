@@ -1,5 +1,3 @@
-### This is a template Dockerfile for the CI/CD pipeline
-
 FROM ubuntu:24.04
 
 ENV TZ=Europe/Budapest
@@ -13,9 +11,7 @@ ENV ARCH_BUILD_WRAPPER=$ARCH_BUILD_WRAPPER
 
 
 # Define the URLs for the tools
-##### TODO #####
 # Check and update version numbers if necessary
-
 ARG ARM_GCC_URL="https://developer.arm.com/-/media/Files/downloads/gnu/12.2.rel1/binrel/arm-gnu-toolchain-12.2.rel1-${ARCH}-arm-none-eabi.tar.xz"
 ARG SIMPLICITY_COMMANDER_URL="https://www.silabs.com/documents/login/software/SimplicityCommander-Linux.zip"
 ARG SONAR_SCANNER_URL="https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-6.1.0.4477-linux-x64.zip"
