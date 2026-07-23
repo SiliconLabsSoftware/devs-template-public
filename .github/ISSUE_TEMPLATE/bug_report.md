@@ -7,21 +7,39 @@ assignees: ''
 
 ---
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+**Summary (Mandatory)**
+A short, clear, one-line description of the issue.
 
-**To Reproduce**
-Steps to reproduce the behavior:
+**Environment (Mandatory)**
+Choose your project type.
+
+_Firmware projects_
+- Release ID or git commit:
+- HW board revision:
+
+_Desktop projects_
+- Git commit or release ID:
+- OS version:
+
+**Steps to reproduce (Mandatory)**
 1. Go to '...'
 2. Click on '....'
 3. Scroll down to '....'
 4. See error
 
-**Expected behavior**
+**Expected Result (Mandatory)**
 A clear and concise description of what you expected to happen.
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
+**Actual Result (Mandatory)**
+A clear and concise description of what actually happened.
 
-**Additional context**
-Add any other context about the problem here.
+**Impact (Optional)** 
+- Who is affected? (all users, specific customers, etc.)
+- What's the risk if not fixed? (Data loss, blockers, usability issues, etc.)
+
+**Screenshots/Attachments (Optional)**
+As applicable.
+
+**Additional Notes (Optional)**
+- Possible root cause (if known):
+- Workaround (if any):
