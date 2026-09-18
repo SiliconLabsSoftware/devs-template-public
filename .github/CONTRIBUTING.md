@@ -85,57 +85,103 @@ During the pull request review, every new contributor must sign the CLA document
 Signatures have a 6-month expiration period.
 
 ## Contribution process
-### Creating an Issue
-Please follow the official GitHub [guide](https://opensource.guide/how-to-contribute/#opening-an-issue).
 
-### Fork the repository
-When you created an issue and based on the discussion you want to contribute with your source-code.
-Branching is disabled on the public Silicon Labs repositories. You need to fork your own repo first.
-Please follow the official GitHub [guide](https://docs.github.com/en/get-started/exploring-projects-on-github/contributing-to-a-project).
-You can create your branch on your own forked repo now.
+### Issues and Questions
+Open a GitHub issue when you can describe a specific problem, such as a reproducible bug or a missing
+feature. For questions, early-stage ideas, or topics that are not yet sufficiently defined, start a
+discussion on the [Silicon Labs Community](https://community.silabs.com/). Once the discussion
+produces a concrete proposal, open a GitHub issue before submitting a pull request.
 
-### Branch Naming Convention
-Branch naming shall follow the following template: *IssueNumber-issue-title-goes-here*
-Example branch name:
-```
-99-bootloader-implementation
-```
-Issue number is necessary to maintain tracebility.
-Now you have a branch. You can start committing your code onto it.
+### Pull Request Guideline
+We welcome pull requests for bug fixes and feature implementations. Before starting work, document
+the proposed change as described in the Issues and Questions section above.
 
-## Commit Messages
+1. **Fork the repository**
+   Branching is disabled on public Silicon Labs repositories, so create a fork under your GitHub
+   account. See GitHub's [contribution guide](https://docs.github.com/en/get-started/exploring-projects-on-github/contributing-to-a-project)
+   for instructions.
+2. **Create a branch in your fork**
+   Create the branch from the latest version of the upstream default branch. Use the following naming
+   convention: `IssueNumber-short-description` (for example, `99-fix-bootloader-startup`).
+3. **Implement and test the change**
+   Keep the pull request focused on one bug fix or feature. Follow the Silicon Labs
+   [coding guidelines](https://github.com/SiliconLabsSoftware/agreements-and-guidelines/blob/main/coding_standard.md)
+   and add or update tests where appropriate.
+4. **Commit and push your changes**
+   Create signed commits as described in the Git setup section. Use clear commit messages that explain
+   what changed and why, then push the branch to your fork.
+5. **Open a draft pull request**
+   Open a draft pull request from the branch in your fork to the default branch of this repository.
+   Use a clear title and complete the pull request template. Link to the related GitHub issue or
+   Silicon Labs Community discussion and describe the change, its motivation, and how it was tested.
+6. **Verify the automated checks**
+   Review the CI results while the pull request is in draft. Correct any failures in your branch and
+   push the updates to your fork. The checks run again automatically and must pass before the pull
+   request is submitted for review:
+   - **[Coding Convention Check](workflows/00-Check-Code-Convention.yml)**: Verifies code formatting.
+   - **[Firmware Build](workflows/02-Build-Firmware.yml)**: Builds the firmware using the
+     [Dockerfile](../Dockerfile).
+   - **[Secret Scanner](workflows/04-TruffleHog-Security-Scan.yml)**: Checks for API keys and other
+     committed secrets.
+7. **Submit the pull request for review**
+   After all automated checks pass and the contribution is ready, select **Ready for review** on
+   GitHub. Sign the Contributor License Agreement when requested, do not remove reviewers assigned
+   through [CODEOWNERS](CODEOWNERS), and address review comments.
 
-Silicon Labs repositories require signed-off commits.
-Every commit represents a change inside the repository. Every change needs to be documented extensively.
-```
-Issuenumber-summary-of-changes
+## Pull request review process
+Silicon Labs uses the following process to review external pull requests.
 
-Detailed description what was implemented.
-Another line of really good description
-```
+### 1. Contributor License Agreement Check
+The CLA bot verifies that every commit author has accepted the Silicon Labs Contributor License
+Agreement and that each signature is still valid. While this requirement is not satisfied, the pull
+request is blocked and labeled **Waiting for CLA**.
 
-## Pull Request Guideline
-Okay you finished your work committed all your changes to your branch. Time to create a pull request.
-Refer to the general pull request [guideline](https://opensource.guide/how-to-contribute/#opening-a-pull-request) from GitHub.
-What to consider when raising a Pull Request:
-1. **Pull Request Naming**
-   By default, GitHub uses the branch name as the pull request title. If the branch naming convention was followed, no changes are needed here.
-2. **Create Description**
-   Fill out the pull request template.
-3. **Check the Reviewer List**
-   GitHub assigns reviewers based on the [CODEOWNERS](CODEOWNERS) file.
-   Add more reviewers if needed. Do not remove reviewers from the PR. Ask the repository owner for updates to the code owners.
-4. **Evaluate the Action Workflow Results**
-   The following workflows are included in every repository:
-   - **[Coding Convention Check](workflows/00-Check-Code-Convention.yml)**: Analyzes the code formatting and fails if any rules are broken.
-   - **[Firmware Build](workflows/02-Build-Firmware.yml)**: Builds the firmware inside the [Dockerfile](../Dockerfile).
-   - **[Secret Scanner](workflows/04-TruffleHog-Security-Scan.yml)**: Runs the TruffleHog security scanner to look for API keys and committed secrets.
+If a signature is missing or has expired, follow the instructions posted by the bot. Processing
+continues automatically after all commit authors satisfy the CLA requirement.
 
-### As a Reviewer
+### 2. Automated Validation
+GitHub automation assigns reviewers according to [CODEOWNERS](CODEOWNERS) and runs the public checks
+configured for the repository. These checks may include formatting, coding-convention, build, test,
+and secret-scanning checks. Some repositories may also perform an AI-assisted code review.
 
-What to consider when reviewing a Pull Request:
+Review the results and correct any failures that can be addressed in your fork.
 
-- All builds must pass successfully.
-- The code must follow the Silicon Labs [coding guidelines](https://github.com/SiliconLabsSoftware/agreements-and-guidelines/blob/main/coding_standard.md).
-- Write clear comments. Describe the issue and explain why you disagree (e.g., mistakes, errors, violations of conventions, performance risks, security issues, etc.).
-- If any comments must be addressed mandatorily, mark the pull request as “Draft.”
+### 3. Initial Silicon Labs Review
+The designated code owners evaluate the contribution's relevance, ownership, scope, quality, and
+overall value. During this stage, the pull request is labeled **Under review**. The review may result
+in one of the following outcomes:
+
+- A suitable contribution proceeds to detailed code review.
+- A contribution that is not useful, cannot be accepted, or falls outside the project scope is
+  closed, with an explanation where appropriate.
+- A valid contribution owned by another product team is assigned or escalated to the responsible
+  Silicon Labs R&D team for further evaluation.
+
+Submitting a pull request does not guarantee acceptance. Silicon Labs may decline a contribution
+because of technical direction, product plans, security, licensing, maintenance cost, duplication,
+or other project considerations.
+
+### 4. Detailed Code Review
+The designated code owners review the implementation. Comments may address correctness, coding
+standards, maintainability, documentation, testing, performance, security, licensing, or
+compatibility.
+
+If changes are requested, update the same branch in your fork and push the new commits. The pull
+request updates automatically. Review continues until the contribution is approved or the pull
+request is closed.
+
+### 5. Protected CI/CD Validation
+After code-owner approval, an authorized Silicon Labs developer starts any protected CI/CD
+validation that cannot run safely or automatically for an external pull request.
+
+If validation fails, results that can be shared are posted to the pull request. Update your
+contribution to address the reported problems. Validation and review then continue. If validation
+passes, the pull request becomes eligible for merge.
+
+### Contributor Responsibilities During Review
+- Monitor the pull request for bot messages, review comments, and check results.
+- Respond to questions and requested changes in a timely manner.
+- Keep the pull request focused on one logical change and avoid unrelated modifications.
+- Update documentation and tests when required by the change.
+- Do not include credentials, secrets, confidential information, third-party code without
+  appropriate rights, or content you are not authorized to contribute.
